@@ -1,0 +1,250 @@
+@import './base.scss';
+@import './layout.scss';
+
+html {
+  height: 100%;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  color: #606266;
+  &:hover {
+    text-decoration: none;
+    color: #409eff;
+  }
+}
+body {
+  height: 100%;
+  font: 12px/1.5 Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, SimSun, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100%;
+}
+.mtop30 {
+  margin-top: $px30;
+}
+.fontBold {
+  font-weight: bold;
+}
+.mtrt20 {
+  margin-right: $px20;
+}
+.wid300 {
+  width: 300px !important;
+}
+.btnStyle1 {
+  padding: 11px 20px !important;
+}
+.header i[class^='el-icon'] {
+  color: $text-color;
+}
+#app .clearFixed:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.loginCon .el-input__inner {
+  // background: rgba(0, 0, 0, 0.1);
+  background: #fff;
+  height: 50px;
+  outline: none;
+  color: $text-color;
+  border: none;
+}
+.loginCon .el-form-item {
+  // border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.marginLeft {
+  margin-left: 64px !important;
+}
+.pTitle {
+  font-size: 14px;
+  color: #666;
+  padding: 10px 0;
+  code {
+    background-color: #f9fafc;
+    padding: 0 4px;
+    border: 1px solid #eaeefb;
+    border-radius: 4px;
+  }
+  span {
+    font-size: 12px;
+  }
+  i {
+    margin-right: 5px;
+    color: #ffc107;
+    font-size: 18px;
+  }
+}
+.el-notification {
+  .el-icon-s-opportunity {
+    color: #ffc107;
+    font-size: 22px;
+    margin-top: 2px;
+  }
+}
+.com-title{
+  display: flex;
+  align-items: center;
+  strong{
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.el-form--inline .el-form-item{
+  width: 33%;
+  margin-right: 0;
+}
+
+
+// 公共样式 START
+// 列表页
+.fyDiv {
+  float: right;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+.anoCard .el-table .el-button{
+  // padding: 8px 18px;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+.anoCard{
+  margin-top: 20px;
+}
+
+
+// 表单页
+.com-form{
+  width: 700px;
+  margin: auto;
+}
+.com-form-m{
+  width: 500px;
+  margin: auto;
+}
+.com-wth200{
+  width: 200px;
+}
+.com-wth350{
+  width: 350px;
+}
+.com-f12{
+  font-size: 12px;
+}
+.font-w{
+  font-weight: bold;
+}
+.searchDiv .search-form-item {
+  width: 100%;
+  text-align: right;
+}
+.searchDiv .el-form-item .el-input {
+  width: 180px;
+}
+.searchDiv .el-range-editor {
+  width: 235px;
+}
+// 公共样式 END
+
+
+
+
+// .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+//   background-color:#666;
+//   // border-color: #666;
+//   border-color: #666;
+// }
+.el-checkbox__input.is-checked + .el-checkbox__label {
+  color: #666;
+}
+.el-checkbox.is-bordered.is-checked{
+  border-color: #666;
+}
+// .el-checkbox__input.is-focus .el-checkbox__inner{
+//   border-color:  #666;
+// }
+
+
+
+
+.fade-enter-active,.fade-leave-active {
+  transition: all .5s ease;
+}
+.fade-enter, .fade-leave-to{
+  height: 0;
+}
+.rotateZ180{
+  transform:rotateZ(180deg);
+}
+
+
+// 搜索框条件下拉 显示
+.box-card {
+  .el-card__body{
+    padding: 0;
+  }
+  .searchDiv{
+    margin: 20px;
+  }
+}
+.fade-enter-active,.fade-leave-active {
+  transition: all .5s ease;
+}
+.fade-enter, .fade-leave-to{
+  height: 0;
+}
