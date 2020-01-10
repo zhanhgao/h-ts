@@ -7,13 +7,13 @@ const getters = {
   permissionObj: (state: any) => state.permission.permissionObj,
   opened: (state: any) => {
     if (state.app.opened === 'false') {
-      return false
+      return false;
     } else if (state.app.opened === 'true') {
-      return true
+      return true;
     }
   },
   tempBread: (state: any) => state.global.tempBread,
   serviceTypeList: (state: any) => state.app.serviceTypeList,
-  osList: (state: any) => state.app.osList
-}
-export default getters
+  osList: (state: any) => state.app.osList,
+};
+export default getters;

@@ -29,7 +29,7 @@ $axios.interceptors.request.use(
     loading = Loading.service({ text: '拼命加载中...' })
     let token = store.getters.token;
     // 写死测试
-    token='765dac684a5c614382b2782223f3f4d49dbf7d5d04dd168b6e606e72e6ddd27dff6030c8e5f9a2c4d33b12c4410d20f024229bba1710e153ec3331e1c0a113629e38240d865d41c5edf33b8997e8aa3dbb4f39f0ac7ecbece0bd30969030547b96b4b365d84efab95e94dc3661defbb1191aad09b2ed5fe70ef45302cfd24e2177db70eef4f60322';
+    token='765dac684a5c614382b2782223f3f4d49dbf7d5d04dd168b6e606e72e6ddd27dff6030c8e5f9a2c4d33b12c4410d20f06ada57f2544747a15c5a3627ab214a319e38240d865d41c5edf33b8997e8aa3dbb4f39f0ac7ecbec69a4776e4c407ead7949ff97877f23e5d3a0b531d4385bae847a93d167bb6c8bc580cb982c1ae42896872d7e4c62cd41';
     if (token) {
       config.headers.Authentication = token // 请求头部添加token
     }

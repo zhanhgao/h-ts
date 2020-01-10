@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: () => import('../views/policy/project/project.vue'),
+    component: () => import('../views/policy/project/project'),
   },
   {
     path: '/about',
@@ -21,6 +21,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('../views/login/index.vue'),
+  },
+  {
+    path: '/demo',
+    name: 'Demo',
+    component: () => import('../views/demo/index'),
   },
   {
     path: '*',

@@ -71,7 +71,7 @@
                 <el-table-column prop="name" label="项目名称"></el-table-column>
                 <el-table-column prop="serviceType" :formatter="formatterServiceType" label="业务类型"></el-table-column>
                 <el-table-column prop="createName" label="创建人" width="70"></el-table-column>
-                <el-table-column label="时间">
+                <el-table-column label="时间" slot="time">
                     <template slot-scope="scope">
                         <p>
                             开始时间：
@@ -83,7 +83,13 @@
                         </p>
                     </template>
                 </el-table-column>
-                <el-table-column fixed="right" label="操作" width="170px" v-if="permission">
+                <el-table-column
+                    fixed="right"
+                    label="操作"
+                    width="170px"
+                    v-if="permission"
+                    slot="operation"
+                >
                     <template slot-scope="scope">
                         <el-button type="primary" @click="manageTable(scope.row,scope.$index)">管理</el-button>
                         <el-button type="success" @click="editTab(scope.row)">编辑</el-button>
@@ -112,11 +118,14 @@
 </template>
 
 <script lang = "ts" >
-import { Component, Vue } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 import { getProjectList, deleteProject } from '@/api/api';
 
+
+
+
 @Component({})
-export default class Foo extends Vue {
+export default class Project extends Vue {
     // 初始化数据
     private showCard: boolean = true;
     private serviceType: string[] = [
@@ -160,7 +169,6 @@ export default class Foo extends Vue {
         this.getProjectList();
         // this.getNavPermission()
     }
-
     // 方法
     private changeShow() {
         this.showCard = !this.showCard;
@@ -212,7 +220,7 @@ export default class Foo extends Vue {
     }
     private formatterServiceType(row: any) {
             const items = this.options.filter(
-                (item: any) => item.value === Number(row.serviceType);
+                (item: any) => item.value === Number(row.serviceType)
             )
             if (items && items[0]) {
                 return items[0].label;
@@ -237,7 +245,7 @@ export default class Foo extends Vue {
     private addTab() {
             this.$router.push({
                 name: 'CreateProject',
-            })
+            });
     }
     // // 编辑项目
     private editTab(row: any) {
@@ -246,7 +254,7 @@ export default class Foo extends Vue {
                 params: {
                     row: row,
                 },
-            })
+            });
     }
     // // 删除项目
     private deleteTab(row: any) {
@@ -256,7 +264,7 @@ export default class Foo extends Vue {
                 type: 'warning',
             })
                 .then(() => {
-                    deleteProject(row.id).then(res => {
+                    deleteProject(row.id).then((res) => {
                         if (res.status === 0) {
                             this.$notify({
                                 title: '提示',
@@ -264,20 +272,20 @@ export default class Foo extends Vue {
                                 type: 'success',
                                 duration: 500,
                                 onClose: () => {
-                                    this.getProjectList()
+                                    this.getProjectList();
                                 },
-                            })
+                            });
                         } else {
-                            this.$message.error(res.errorMsg)
+                            this.$message.error(res.errorMsg);
                         }
-                    })
+                    });
                 })
                 .catch(() => {
                     this.$message({
                         type: 'info',
                         message: '已取消删除',
-                    })
-                })
+                    });
+                });
     }
     // 管理
     private manageTable(row: any) {
@@ -287,7 +295,7 @@ export default class Foo extends Vue {
                     name: row.name,
                     id: row.id,
                 },
-            })
+            });
     }
     // 获取用户nav权限
     // getNavPermission() {
@@ -303,6 +311,3 @@ export default class Foo extends Vue {
     // },
 }
 </script>
-
-<style scoped >
-</style>
